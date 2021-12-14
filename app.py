@@ -8,21 +8,25 @@ app=Flask(__name__)
 camera = cv2.VideoCapture(0)
 sam_image = face_recognition.load_image_file("templates/Images/sam.png")
 sam_face_encoding = face_recognition.face_encodings(sam_image)[0]
+mum_image = face_recognition.load_image_file("templates/Images/pp.jpeg")
+mum_face_encoding = face_recognition.face_encodings(mum_image)[0]
+paa_image = face_recognition.load_image_file("templates/Images/papa.jpg")
+paa_face_encoding = face_recognition.face_encodings(paa_image)[0]
+bhais_image = face_recognition.load_image_file("templates/Images/bhais.jpeg")
+bhais_face_encoding = face_recognition.face_encodings(bhais_image)[0]
 
-# Load a second sample picture and learn how to recognize it.
-#bradley_image = face_recognition.load_image_file("Bradley/bradley.jpg")
-#bradley_face_encoding = face_recognition.face_encodings(bradley_image)[0]
-
-# Create arrays of known face encodings and their names
 known_face_encodings = [
     sam_face_encoding,
-    #bradley_face_encoding
+    mum_face_encoding,paa_face_encoding,bhais_face_encoding
+    
 ]
 known_face_names = [
     "Saumya",
-    "Bradly"
+    "Mummy",
+    "Papa",
+    "Bhaisuu"
+    
 ]
-# Initialize some variables
 face_locations = []
 face_encodings = []
 face_names = []
